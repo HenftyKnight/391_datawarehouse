@@ -6,18 +6,20 @@ namespace datawarehouse_courses
 {
     public partial class search : Form
     {
-        private SqlConnection conn = new SqlConnection("Data Source=ANDROMEDA;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+        private SqlConnection conn = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
         public search()
         {
             InitializeComponent();
 
             PopulateComboBox(coursesComboBox, "SELECT DISTINCT course_name FROM courses_dimension ORDER BY course_name ASC");
             PopulateComboBox(departmentComboBox, "SELECT DISTINCT course_department FROM courses_dimension ORDER BY course_department ASC");
-            departmentComboBox.Items.Add("courses_dimension.course_name");
+            //departmentComboBox.Items.Add("courses_dimension.course_name");
             PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension ORDER BY name ASC");
             PopulateComboBox(dateComboBox, "SELECT DISTINCT year FROM date_dimension ORDER BY year ASC");
             PopulateComboBox(semsterComboBox, "SELECT DISTINCT semester FROM date_dimension ORDER BY semester ASC");
-            
+            PopulateComboBox(genderComboBox, "SELECT DISTINCT gender FROM instructor_dimension ORDER BY gender ASC");
+
+            mComboBox.Items.Add("");
             mComboBox.Items.Add("Number of courses");
         }
         private void search_Load(object sender, EventArgs e)
@@ -29,6 +31,9 @@ namespace datawarehouse_courses
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
+            comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox.Items.Clear();
+            comboBox.Items.Add(" ");
             comboBox.Items.Add("Select all");
 
             foreach (DataRow row in dt.Rows)
@@ -47,49 +52,81 @@ namespace datawarehouse_courses
                 List<string> wheres = new List<string>();
                 List<string> measures = new List<string>();
 
-                if (instructorComboBox.SelectedIndex > 0)
-                {
-                    columns.Add("instructor_dimension.name");
-                    wheres.Add("instructor_dimension.name LIKE '%" + instructorComboBox.SelectedItem.ToString() + "%'");
-                }
+
 
                 if (coursesComboBox.SelectedIndex > 0)
                 {
                     columns.Add("courses_dimension.course_name");
-                    wheres.Add("courses_dimension.course_name LIKE '%" + coursesComboBox.SelectedItem.ToString() + "%'");
+                    //if (coursesComboBox.SelectedItem.ToString() != "Select all")
+                    if (!coursesComboBox.SelectedItem.ToString().Equals("Select all"))
+                    {
+                        wheres.Add("courses_dimension.course_name = '" + coursesComboBox.SelectedItem.ToString() + "'");
+                    }
+                    //columns.Add("courses_dimension.course_name");
+                    //wheres.Add("courses_dimension.course_name LIKE '%" + coursesComboBox.SelectedItem.ToString() + "%'");
                 }
+
 
                 if (departmentComboBox.SelectedIndex > 0)
                 {
                     columns.Add("courses_dimension.course_department");
-                    wheres.Add("courses_dimension.course_department LIKE '%" + departmentComboBox.SelectedItem.ToString() + "%'");
+                                  
+                    if (!departmentComboBox.SelectedItem.ToString().Equals("Select all"))
+                    {
+                        wheres.Add("courses_dimension.course_department = '" + departmentComboBox.SelectedItem.ToString() + "'");
+                    }
                 }
-
+                                    
                 if (dateComboBox.SelectedIndex > 0)
                 {
                     columns.Add("date_dimension.year");
-                    wheres.Add("date_dimension.year = '" + dateComboBox.SelectedItem.ToString() + "'");
+                    if (!dateComboBox.SelectedItem.ToString().Equals("Select all"))
+                    {
+                        wheres.Add("date_dimension.year = '" + dateComboBox.SelectedItem.ToString() + "'");
+                    }
+                }
+
+                if (instructorComboBox.SelectedIndex > 0)
+                {
+         
+                    columns.Add("instructor_dimension.name");
+                    if (!instructorComboBox.SelectedItem.ToString().Equals("Select all"))
+                    {
+                        wheres.Add("instructor_dimension.name  = '" + instructorComboBox.SelectedItem.ToString() + "'");
+                    }
+
                 }
 
                 if (semsterComboBox.SelectedIndex > 0)
                 {
                     columns.Add("date_dimension.semester");
-                    wheres.Add("date_dimension.semester LIKE '%" + semsterComboBox.SelectedItem.ToString() + "%'");
+                    if (!semsterComboBox.SelectedItem.ToString().Equals("Select all"))
+                    {
+                        wheres.Add("date_dimension.semester = '" + semsterComboBox.SelectedItem.ToString() + "'");
+                    }
                 }
 
+                if (genderComboBox.SelectedIndex > 0)
+                {
+                    columns.Add("instructor_dimension.gender");
+                    if (!genderComboBox.SelectedItem.ToString().Equals("Select all"))
+                    {
+                        wheres.Add("instructor_dimension.gender = '" + genderComboBox.SelectedItem.ToString() + "'");
+                    }
+                }
                 if (columns.Count == 0)
                 {
                     MessageBox.Show("Please select at least one search option.");
                     return;
                 }
 
-                if (mComboBox.SelectedIndex != null)
+                if (mComboBox.SelectedIndex > 0)
                 {
                     string selectedMeasure = mComboBox.SelectedItem.ToString();
 
                     if (selectedMeasure.Equals("Number of courses"))
                     {
-                        measures.Add("SUM(number_of_courses)");
+                        measures.Add("SUM(number_of_courses) as Number_of_Courses");
                     }
                     else
                     {
@@ -192,5 +229,25 @@ namespace datawarehouse_courses
         {
 
         }
+
+        private void genderComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void departmentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (!departmentComboBox.SelectedItem.ToString().Equals("Select all"))
+            {
+                instructorComboBox.Items.Clear();
+                PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension WHERE instructor_dimension.department = '" + departmentComboBox.SelectedItem.ToString() + "' ORDER BY name ASC");
+            }
+            else if (departmentComboBox.SelectedItem.ToString().Equals("Select all")) {
+                instructorComboBox.Items.Clear();
+                PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension ORDER BY name ASC");
+
+            }
+        }
     }
-    }
+}
