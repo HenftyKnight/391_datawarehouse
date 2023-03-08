@@ -1,0 +1,132 @@
+﻿/*private void executeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+
+                List<string> columns = new List<string>();
+                List<string> wheres = new List<string>();
+
+                if (instructorComboBox.SelectedIndex > 0)
+                {
+                    columns.Add("instructor_dimension.name");
+                    wheres.Add("instructor_dimension.name LIKE '%" + instructorComboBox.SelectedItem.ToString() + "%'");
+                }
+
+                if (coursesComboBox.SelectedIndex > 0)
+                {
+                    columns.Add("courses_dimension.course_name");
+                    wheres.Add("courses_dimension.course_name LIKE '%" + coursesComboBox.SelectedItem.ToString() + "%'");
+                }
+
+                if (departmentComboBox.SelectedIndex > 0)
+                {
+                    columns.Add("courses_dimension.course_department");
+                    wheres.Add("course_dimension.course_department LIKE '%" + departmentComboBox.SelectedItem.ToString() + "%'");
+                }
+
+                if (dateComboBox.SelectedIndex > 0)
+                {
+                    columns.Add("date_dimension.year");
+                    wheres.Add("date_dimension.year = '" + dateComboBox.SelectedItem.ToString() + "'");
+                }
+
+                if (semsterComboBox.SelectedIndex > 0)
+                {
+                    columns.Add("date_dimension.semester");
+                    wheres.Add("date_dimension.semester LIKE '%" + semsterComboBox.SelectedItem.ToString() + "%'");
+                }
+
+                if (columns.Count == 0)
+                {
+                    MessageBox.Show("Please select at least one search option.");
+                    return;
+                }
+
+                string column = string.Join(",", columns);
+                string where = string.Join(" AND ", wheres);
+
+                string query = $"SELECT {column} FROM courses_fact " +
+                               "INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id " +
+                               "INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id " +
+                               "INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id ";
+
+                if (!string.IsNullOrEmpty(where))
+                {
+                    query += $"WHERE {where} ";
+                }
+
+                query += $"GROUP BY {column}";
+
+                MessageBox.Show(query.ToString());
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                resultsDataGridView.DataSource = dt;
+
+                conn.Close();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("An error occurred while executing the query." + Ex.ToString());
+            }
+        }
+
+
+This code for the below query SELECT date_dimension.year, date_dimension.semester, SUM(number_of_courses) FROM courses_fact INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id WHERE date_dimension.year = '2023' AND date_dimension.semester LIKE '%Spring%' GROUP BY date_dimension.year, date_dimension.semester WITH ROLLUP Give me a 3 row output, instead of a single row year semester column1 2023 Fall 6 2023 6 6
+The query you provided is using the ROLLUP operator in the GROUP BY clause. This operator generates subtotal and total rows for each group. In this case, since you are grouping by year and semester, the ROLLUP operator will generate subtotals for each year and a grand total for all years.
+Since you are filtering the results to only include rows where year = '2023' and semester LIKE '%Spring%', the subtotal row for 2023 and the grand total row will only include data for the spring semester of 2023.
+Therefore, the output you are seeing is correct, with three rows representing:
+•	The spring semester of 2023 (year = '2023' and semester = 'Spring')
+•	The subtotal for the year 2023 (all semesters in 2023)
+•	The grand total for all years and semesters.
+CUBE operation: The CUBE operation generates a result set that includes all possible combinations of the dimensions specified in the GROUP BY clause. For example, we can modify the original query to include the CUBE operation as follows:
+
+SELECT date_dimension.year, date_dimension.semester, instructor_dimension.department, SUM(number_of_courses) 
+FROM courses_fact
+INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id 
+INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id 
+INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id
+WHERE date_dimension.year = '2023' AND date_dimension.semester LIKE '%Spring%' 
+GROUP BY CUBE(date_dimension.year, date_dimension.semester, instructor_dimension.department)
+
+This will generate a result set that includes all possible combinations of the year, semester, and department dimensions. For example, it will include rows for each year/semester combination, as well as rows for each year/department combination, semester/department combination, and year/semester/department combination.
+
+RANK operation: The RANK operation assigns a rank to each row based on the value of a specified column. For example, we can modify the original query to include the RANK operation as follows:
+SELECT date_dimension.year, date_dimension.semester, instructor_dimension.department, 
+SUM(number_of_courses), RANK() OVER (ORDER BY SUM(number_of_courses) DESC) as course_rank
+FROM courses_fact
+INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id 
+INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id 
+INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id
+WHERE date_dimension.year = '2023' AND date_dimension.semester LIKE '%Spring%' 
+GROUP BY date_dimension.year, date_dimension.semester, instructor_dimension.department
+ORDER BY course_rank
+
+•  This will generate a result set that includes the rank of each row based on the total number of courses taught by each instructor in the specified year/semester. The rows will be ordered by course_rank, with the instructor who taught the most courses in the specified year/semester receiving a rank of 1.
+•  ROLLUP operation: The ROLLUP operation generates a result set that includes subtotal and grand total rows for the specified dimensions in the GROUP BY clause. For example, we can modify the original query to include the ROLLUP operation on the year and semester dimensions as follows:
+SELECT date_dimension.year, date_dimension.semester, SUM(number_of_courses) 
+FROM courses_fact
+INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id 
+INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id 
+INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id
+WHERE date_dimension.year = '2023' AND date_dimension.semester LIKE '%Spring%' 
+GROUP BY ROLLUP(date_dimension.year, date_dimension.semester)
+
+This will generate a result set that includes subtotal rows for each year/semester combination, as well as a grand total row that includes the total number of courses taught in the specified year/semester.
+
+
+Certainly! Here's an example query for drill-down operation on the date_dimension table:
+SELECT year, semester, COUNT(*) as num_courses
+FROM courses_fact cf
+JOIN date_dimension dd ON cf.date_id = dd.date_id
+GROUP BY year, semester
+
+This will give you a summary of the number of courses taught in each year and semester. You can then use the GROUPING SETS clause to drill down to more detailed levels of aggregation:
+SELECT year, semester, course_department, COUNT(*) as num_courses
+FROM courses_fact cf
+JOIN date_dimension dd ON cf.date_id = dd.date_id
+JOIN courses_dimension cd ON cf.course_id = cd.course_id
+GROUP BY GROUPING SETS ((year, semester, course_department), (year, semester))
+This will give you a breakdown of the number of courses taught in each department, for each year and semester. The GROUPING SETS clause allows you to specify multiple levels of aggregation in a single query.
