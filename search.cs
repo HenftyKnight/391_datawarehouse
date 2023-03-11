@@ -108,10 +108,26 @@ namespace datawarehouse_courses
                     query += $", {measure}";
                 }
 
-                query += " FROM courses_fact " +
-                           "INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id " +
-                           "INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id " +
-                           "INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id ";
+                query += " FROM courses_fact ";
+
+                bool joinInstructor = columns.Contains("instructor_dimension.name");
+                bool joinDate = columns.Contains("date_dimension.year") || columns.Contains("date_dimension.semester");
+                bool joinCourses = columns.Contains("courses_dimension.course_name") || columns.Contains("courses_dimension.course_department");
+
+                if (joinInstructor)
+                {
+                    query += "INNER JOIN instructor_dimension ON courses_fact.instructor_id = instructor_dimension.instructor_id ";
+                }
+
+                if (joinDate)
+                {
+                    query += "INNER JOIN date_dimension ON courses_fact.date_id = date_dimension.date_id ";
+                }
+
+                if (joinCourses)
+                {
+                    query += "INNER JOIN courses_dimension ON courses_fact.course_id = courses_dimension.course_id ";
+                }
 
                 if (!string.IsNullOrEmpty(where))
                 {
@@ -119,13 +135,6 @@ namespace datawarehouse_courses
                 }
 
                 query += $"GROUP BY {column}";
-
-                /*if (!string.IsNullOrEmpty(column))
-                {
-                    query += $", {where}";
-                }*/
-
-                //query += " WITH ROLLUP";
 
                 MessageBox.Show(query.ToString());
 
@@ -149,6 +158,7 @@ namespace datawarehouse_courses
                 }
             }
         }
+
 
         private void measureComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
