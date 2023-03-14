@@ -28,276 +28,327 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.olapGroupBox = new System.Windows.Forms.GroupBox();
-            this.resultsDataGridView = new System.Windows.Forms.DataGridView();
-            this.courseDepartmentComboBox = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.genderComboBox = new System.Windows.Forms.ComboBox();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.executeButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.mComboBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.departmentComboBox = new System.Windows.Forms.ComboBox();
-            this.Semester = new System.Windows.Forms.Label();
-            this.semsterComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateComboBox = new System.Windows.Forms.ComboBox();
-            this.coursesComboBox = new System.Windows.Forms.ComboBox();
-            this.instructorComboBox = new System.Windows.Forms.ComboBox();
-            this.olapGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).BeginInit();
-            this.courseDepartmentComboBox.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            olapGroupBox = new GroupBox();
+            loadBtn = new Button();
+            findBtn = new Button();
+            resultsDataGridView = new DataGridView();
+            courseDepartmentComboBox = new GroupBox();
+            label6 = new Label();
+            genderComboBox = new ComboBox();
+            resetButton = new Button();
+            executeButton = new Button();
+            label5 = new Label();
+            mComboBox = new ComboBox();
+            label4 = new Label();
+            departmentComboBox = new ComboBox();
+            Semester = new Label();
+            semsterComboBox = new ComboBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            dateComboBox = new ComboBox();
+            coursesComboBox = new ComboBox();
+            instructorComboBox = new ComboBox();
+            textBox1 = new TextBox();
+            olapGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)resultsDataGridView).BeginInit();
+            courseDepartmentComboBox.SuspendLayout();
+            SuspendLayout();
             // 
             // olapGroupBox
             // 
-            this.olapGroupBox.Controls.Add(this.resultsDataGridView);
-            this.olapGroupBox.Controls.Add(this.courseDepartmentComboBox);
-            this.olapGroupBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.olapGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.olapGroupBox.Name = "olapGroupBox";
-            this.olapGroupBox.Size = new System.Drawing.Size(1043, 525);
-            this.olapGroupBox.TabIndex = 0;
-            this.olapGroupBox.TabStop = false;
-            this.olapGroupBox.Text = "Search Operation";
+            olapGroupBox.Controls.Add(loadBtn);
+            olapGroupBox.Controls.Add(findBtn);
+            olapGroupBox.Controls.Add(resultsDataGridView);
+            olapGroupBox.Controls.Add(courseDepartmentComboBox);
+            olapGroupBox.Controls.Add(textBox1);
+            olapGroupBox.ForeColor = SystemColors.ControlLightLight;
+            olapGroupBox.Location = new Point(14, 13);
+            olapGroupBox.Margin = new Padding(3, 4, 3, 4);
+            olapGroupBox.Name = "olapGroupBox";
+            olapGroupBox.Padding = new Padding(3, 4, 3, 4);
+            olapGroupBox.Size = new Size(1192, 667);
+            olapGroupBox.TabIndex = 0;
+            olapGroupBox.TabStop = false;
+            olapGroupBox.Text = "Search Operation";
+            // 
+            // loadBtn
+            // 
+            loadBtn.ForeColor = SystemColors.ActiveCaptionText;
+            loadBtn.Location = new Point(524, 32);
+            loadBtn.Name = "loadBtn";
+            loadBtn.Size = new Size(86, 26);
+            loadBtn.TabIndex = 11;
+            loadBtn.Text = "Load File";
+            loadBtn.UseVisualStyleBackColor = true;
+            loadBtn.Click += loadBtn_Click;
+            // 
+            // findBtn
+            // 
+            findBtn.ForeColor = SystemColors.ActiveCaptionText;
+            findBtn.Location = new Point(396, 32);
+            findBtn.Name = "findBtn";
+            findBtn.Size = new Size(86, 26);
+            findBtn.TabIndex = 10;
+            findBtn.Text = "Find FIle";
+            findBtn.UseVisualStyleBackColor = true;
+            findBtn.Click += findBtn_Click;
             // 
             // resultsDataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.resultsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.resultsDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.resultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.resultsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.resultsDataGridView.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.resultsDataGridView.Location = new System.Drawing.Point(26, 224);
-            this.resultsDataGridView.Name = "resultsDataGridView";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.resultsDataGridView.RowTemplate.Height = 25;
-            this.resultsDataGridView.Size = new System.Drawing.Size(954, 289);
-            this.resultsDataGridView.TabIndex = 8;
-            this.resultsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultsDataGridView_CellContentClick);
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            resultsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            resultsDataGridView.BackgroundColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            resultsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            resultsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            resultsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            resultsDataGridView.GridColor = SystemColors.ActiveBorder;
+            resultsDataGridView.Location = new Point(30, 284);
+            resultsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            resultsDataGridView.Name = "resultsDataGridView";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.InfoText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            resultsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            resultsDataGridView.RowHeadersWidth = 47;
+            resultsDataGridView.RowTemplate.Height = 25;
+            resultsDataGridView.Size = new Size(1090, 366);
+            resultsDataGridView.TabIndex = 8;
+            resultsDataGridView.CellContentClick += resultsDataGridView_CellContentClick;
             // 
             // courseDepartmentComboBox
             // 
-            this.courseDepartmentComboBox.Controls.Add(this.label6);
-            this.courseDepartmentComboBox.Controls.Add(this.genderComboBox);
-            this.courseDepartmentComboBox.Controls.Add(this.resetButton);
-            this.courseDepartmentComboBox.Controls.Add(this.executeButton);
-            this.courseDepartmentComboBox.Controls.Add(this.label5);
-            this.courseDepartmentComboBox.Controls.Add(this.mComboBox);
-            this.courseDepartmentComboBox.Controls.Add(this.label4);
-            this.courseDepartmentComboBox.Controls.Add(this.departmentComboBox);
-            this.courseDepartmentComboBox.Controls.Add(this.Semester);
-            this.courseDepartmentComboBox.Controls.Add(this.semsterComboBox);
-            this.courseDepartmentComboBox.Controls.Add(this.label3);
-            this.courseDepartmentComboBox.Controls.Add(this.label2);
-            this.courseDepartmentComboBox.Controls.Add(this.label1);
-            this.courseDepartmentComboBox.Controls.Add(this.dateComboBox);
-            this.courseDepartmentComboBox.Controls.Add(this.coursesComboBox);
-            this.courseDepartmentComboBox.Controls.Add(this.instructorComboBox);
-            this.courseDepartmentComboBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.courseDepartmentComboBox.Location = new System.Drawing.Point(26, 38);
-            this.courseDepartmentComboBox.Name = "courseDepartmentComboBox";
-            this.courseDepartmentComboBox.Size = new System.Drawing.Size(954, 168);
-            this.courseDepartmentComboBox.TabIndex = 6;
-            this.courseDepartmentComboBox.TabStop = false;
+            courseDepartmentComboBox.Controls.Add(label6);
+            courseDepartmentComboBox.Controls.Add(genderComboBox);
+            courseDepartmentComboBox.Controls.Add(resetButton);
+            courseDepartmentComboBox.Controls.Add(executeButton);
+            courseDepartmentComboBox.Controls.Add(label5);
+            courseDepartmentComboBox.Controls.Add(mComboBox);
+            courseDepartmentComboBox.Controls.Add(label4);
+            courseDepartmentComboBox.Controls.Add(departmentComboBox);
+            courseDepartmentComboBox.Controls.Add(Semester);
+            courseDepartmentComboBox.Controls.Add(semsterComboBox);
+            courseDepartmentComboBox.Controls.Add(label3);
+            courseDepartmentComboBox.Controls.Add(label2);
+            courseDepartmentComboBox.Controls.Add(label1);
+            courseDepartmentComboBox.Controls.Add(dateComboBox);
+            courseDepartmentComboBox.Controls.Add(coursesComboBox);
+            courseDepartmentComboBox.Controls.Add(instructorComboBox);
+            courseDepartmentComboBox.ForeColor = SystemColors.Control;
+            courseDepartmentComboBox.Location = new Point(30, 65);
+            courseDepartmentComboBox.Margin = new Padding(3, 4, 3, 4);
+            courseDepartmentComboBox.Name = "courseDepartmentComboBox";
+            courseDepartmentComboBox.Padding = new Padding(3, 4, 3, 4);
+            courseDepartmentComboBox.Size = new Size(1090, 211);
+            courseDepartmentComboBox.TabIndex = 6;
+            courseDepartmentComboBox.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(320, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 15);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Gender";
+            label6.AutoSize = true;
+            label6.Location = new Point(366, 153);
+            label6.Name = "label6";
+            label6.Size = new Size(54, 19);
+            label6.TabIndex = 15;
+            label6.Text = "Gender";
             // 
             // genderComboBox
             // 
-            this.genderComboBox.FormattingEnabled = true;
-            this.genderComboBox.Location = new System.Drawing.Point(320, 139);
-            this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.genderComboBox.Size = new System.Drawing.Size(149, 23);
-            this.genderComboBox.TabIndex = 14;
-            this.genderComboBox.SelectedIndexChanged += new System.EventHandler(this.genderComboBox_SelectedIndexChanged);
+            genderComboBox.FormattingEnabled = true;
+            genderComboBox.Location = new Point(366, 176);
+            genderComboBox.Margin = new Padding(3, 4, 3, 4);
+            genderComboBox.Name = "genderComboBox";
+            genderComboBox.RightToLeft = RightToLeft.No;
+            genderComboBox.Size = new Size(170, 27);
+            genderComboBox.TabIndex = 14;
+            genderComboBox.SelectedIndexChanged += genderComboBox_SelectedIndexChanged;
             // 
             // resetButton
             // 
-            this.resetButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.resetButton.Location = new System.Drawing.Point(818, 126);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(120, 23);
-            this.resetButton.TabIndex = 9;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            resetButton.ForeColor = SystemColors.ActiveCaptionText;
+            resetButton.Location = new Point(935, 160);
+            resetButton.Margin = new Padding(3, 4, 3, 4);
+            resetButton.Name = "resetButton";
+            resetButton.Size = new Size(137, 29);
+            resetButton.TabIndex = 9;
+            resetButton.Text = "Reset";
+            resetButton.UseVisualStyleBackColor = true;
+            resetButton.Click += resetButton_Click;
             // 
             // executeButton
             // 
-            this.executeButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.executeButton.Location = new System.Drawing.Point(818, 97);
-            this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(120, 23);
-            this.executeButton.TabIndex = 7;
-            this.executeButton.Text = "Search";
-            this.executeButton.UseVisualStyleBackColor = true;
-            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
+            executeButton.ForeColor = SystemColors.ActiveCaptionText;
+            executeButton.Location = new Point(935, 123);
+            executeButton.Margin = new Padding(3, 4, 3, 4);
+            executeButton.Name = "executeButton";
+            executeButton.Size = new Size(137, 29);
+            executeButton.TabIndex = 7;
+            executeButton.Text = "Search";
+            executeButton.UseVisualStyleBackColor = true;
+            executeButton.Click += executeButton_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 15);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Search Parameters";
+            label5.AutoSize = true;
+            label5.Location = new Point(7, 27);
+            label5.Name = "label5";
+            label5.Size = new Size(122, 19);
+            label5.TabIndex = 13;
+            label5.Text = "Search Parameters";
             // 
             // mComboBox
             // 
-            this.mComboBox.FormattingEnabled = true;
-            this.mComboBox.Location = new System.Drawing.Point(6, 39);
-            this.mComboBox.Name = "mComboBox";
-            this.mComboBox.Size = new System.Drawing.Size(276, 23);
-            this.mComboBox.TabIndex = 12;
-            this.mComboBox.SelectedIndexChanged += new System.EventHandler(this.mComboBox_SelectedIndexChanged);
+            mComboBox.FormattingEnabled = true;
+            mComboBox.Location = new Point(7, 49);
+            mComboBox.Margin = new Padding(3, 4, 3, 4);
+            mComboBox.Name = "mComboBox";
+            mComboBox.Size = new Size(315, 27);
+            mComboBox.TabIndex = 12;
+            mComboBox.SelectedIndexChanged += mComboBox_SelectedIndexChanged;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(517, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 15);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Course Department";
+            label4.AutoSize = true;
+            label4.Location = new Point(591, 24);
+            label4.Name = "label4";
+            label4.Size = new Size(130, 19);
+            label4.TabIndex = 11;
+            label4.Text = "Course Department";
             // 
             // departmentComboBox
             // 
-            this.departmentComboBox.FormattingEnabled = true;
-            this.departmentComboBox.Location = new System.Drawing.Point(517, 37);
-            this.departmentComboBox.Name = "departmentComboBox";
-            this.departmentComboBox.Size = new System.Drawing.Size(173, 23);
-            this.departmentComboBox.TabIndex = 10;
-            this.departmentComboBox.SelectedIndexChanged += new System.EventHandler(this.departmentComboBox_SelectedIndexChanged);
+            departmentComboBox.FormattingEnabled = true;
+            departmentComboBox.Location = new Point(591, 47);
+            departmentComboBox.Margin = new Padding(3, 4, 3, 4);
+            departmentComboBox.Name = "departmentComboBox";
+            departmentComboBox.Size = new Size(197, 27);
+            departmentComboBox.TabIndex = 10;
+            departmentComboBox.SelectedIndexChanged += departmentComboBox_SelectedIndexChanged;
             // 
             // Semester
             // 
-            this.Semester.AutoSize = true;
-            this.Semester.Location = new System.Drawing.Point(517, 72);
-            this.Semester.Name = "Semester";
-            this.Semester.Size = new System.Drawing.Size(55, 15);
-            this.Semester.TabIndex = 8;
-            this.Semester.Text = "Semester";
+            Semester.AutoSize = true;
+            Semester.Location = new Point(591, 91);
+            Semester.Name = "Semester";
+            Semester.Size = new Size(65, 19);
+            Semester.TabIndex = 8;
+            Semester.Text = "Semester";
             // 
             // semsterComboBox
             // 
-            this.semsterComboBox.FormattingEnabled = true;
-            this.semsterComboBox.Location = new System.Drawing.Point(517, 90);
-            this.semsterComboBox.Name = "semsterComboBox";
-            this.semsterComboBox.Size = new System.Drawing.Size(173, 23);
-            this.semsterComboBox.TabIndex = 7;
-            this.semsterComboBox.SelectedIndexChanged += new System.EventHandler(this.measureComboBox_SelectedIndexChanged);
+            semsterComboBox.FormattingEnabled = true;
+            semsterComboBox.Location = new Point(591, 114);
+            semsterComboBox.Margin = new Padding(3, 4, 3, 4);
+            semsterComboBox.Name = "semsterComboBox";
+            semsterComboBox.Size = new Size(197, 27);
+            semsterComboBox.TabIndex = 7;
+            semsterComboBox.SelectedIndexChanged += measureComboBox_SelectedIndexChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Date";
+            label3.AutoSize = true;
+            label3.Location = new Point(366, 91);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 19);
+            label3.TabIndex = 5;
+            label3.Text = "Date";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Course Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.AutoSize = true;
+            label2.Location = new Point(366, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 19);
+            label2.TabIndex = 4;
+            label2.Text = "Course Name";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(744, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Instructors";
+            label1.AutoSize = true;
+            label1.Location = new Point(850, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 19);
+            label1.TabIndex = 3;
+            label1.Text = "Instructors";
             // 
             // dateComboBox
             // 
-            this.dateComboBox.FormattingEnabled = true;
-            this.dateComboBox.Location = new System.Drawing.Point(320, 90);
-            this.dateComboBox.Name = "dateComboBox";
-            this.dateComboBox.Size = new System.Drawing.Size(149, 23);
-            this.dateComboBox.TabIndex = 2;
+            dateComboBox.FormattingEnabled = true;
+            dateComboBox.Location = new Point(366, 114);
+            dateComboBox.Margin = new Padding(3, 4, 3, 4);
+            dateComboBox.Name = "dateComboBox";
+            dateComboBox.Size = new Size(170, 27);
+            dateComboBox.TabIndex = 2;
             // 
             // coursesComboBox
             // 
-            this.coursesComboBox.FormattingEnabled = true;
-            this.coursesComboBox.Location = new System.Drawing.Point(320, 38);
-            this.coursesComboBox.Name = "coursesComboBox";
-            this.coursesComboBox.Size = new System.Drawing.Size(149, 23);
-            this.coursesComboBox.TabIndex = 1;
+            coursesComboBox.FormattingEnabled = true;
+            coursesComboBox.Location = new Point(366, 48);
+            coursesComboBox.Margin = new Padding(3, 4, 3, 4);
+            coursesComboBox.Name = "coursesComboBox";
+            coursesComboBox.Size = new Size(170, 27);
+            coursesComboBox.TabIndex = 1;
             // 
             // instructorComboBox
             // 
-            this.instructorComboBox.FormattingEnabled = true;
-            this.instructorComboBox.Location = new System.Drawing.Point(744, 38);
-            this.instructorComboBox.Name = "instructorComboBox";
-            this.instructorComboBox.Size = new System.Drawing.Size(166, 23);
-            this.instructorComboBox.TabIndex = 0;
-            this.instructorComboBox.SelectedIndexChanged += new System.EventHandler(this.instructorComboBox_SelectedIndexChanged);
+            instructorComboBox.FormattingEnabled = true;
+            instructorComboBox.Location = new Point(850, 48);
+            instructorComboBox.Margin = new Padding(3, 4, 3, 4);
+            instructorComboBox.Name = "instructorComboBox";
+            instructorComboBox.Size = new Size(189, 27);
+            instructorComboBox.TabIndex = 0;
+            instructorComboBox.SelectedIndexChanged += instructorComboBox_SelectedIndexChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(37, 32);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(315, 26);
+            textBox1.TabIndex = 9;
             // 
             // search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1099, 540);
-            this.Controls.Add(this.olapGroupBox);
-            this.Name = "search";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.search_Load);
-            this.olapGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).EndInit();
-            this.courseDepartmentComboBox.ResumeLayout(false);
-            this.courseDepartmentComboBox.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(1256, 684);
+            Controls.Add(olapGroupBox);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "search";
+            Text = "Form1";
+            Load += search_Load;
+            olapGroupBox.ResumeLayout(false);
+            olapGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)resultsDataGridView).EndInit();
+            courseDepartmentComboBox.ResumeLayout(false);
+            courseDepartmentComboBox.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -321,5 +372,8 @@
         private Label label5;
         private Label label6;
         private ComboBox genderComboBox;
+        private TextBox textBox1;
+        private Button findBtn;
+        private Button loadBtn;
     }
 }

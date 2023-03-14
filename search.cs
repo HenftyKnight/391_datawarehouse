@@ -1,12 +1,18 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace datawarehouse_courses
 {
     public partial class search : Form
+
     {
-        private SqlConnection conn = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+        string filePath = "";
+
+        //private SqlConnection conn = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+        private SqlConnection conn = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
+
         public search()
         {
             InitializeComponent();
@@ -70,13 +76,13 @@ namespace datawarehouse_courses
                 if (departmentComboBox.SelectedIndex > 0)
                 {
                     columns.Add("courses_dimension.course_department");
-                                  
+
                     if (!departmentComboBox.SelectedItem.ToString().Equals("Select all"))
                     {
                         wheres.Add("courses_dimension.course_department = '" + departmentComboBox.SelectedItem.ToString() + "'");
                     }
                 }
-                                    
+
                 if (dateComboBox.SelectedIndex > 0)
                 {
                     columns.Add("date_dimension.year");
@@ -88,7 +94,7 @@ namespace datawarehouse_courses
 
                 if (instructorComboBox.SelectedIndex > 0)
                 {
-         
+
                     columns.Add("instructor_dimension.name");
                     if (!instructorComboBox.SelectedItem.ToString().Equals("Select all"))
                     {
@@ -253,11 +259,62 @@ namespace datawarehouse_courses
                 instructorComboBox.Items.Clear();
                 PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension WHERE instructor_dimension.department = '" + departmentComboBox.SelectedItem.ToString() + "' ORDER BY name ASC");
             }
-            else if (departmentComboBox.SelectedItem.ToString().Equals("Select all")) {
+            else if (departmentComboBox.SelectedItem.ToString().Equals("Select all"))
+            {
                 instructorComboBox.Items.Clear();
                 PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension ORDER BY name ASC");
 
             }
+        }
+
+        private void findBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fopen = new OpenFileDialog();
+            fopen.Filter = "XML files (*.xml)|*.xml";
+            fopen.FilterIndex = 1;
+            fopen.RestoreDirectory = true;
+
+            if (fopen.ShowDialog() == DialogResult.OK)
+            {
+                filePath = fopen.FileName;
+                textBox1.Text = filePath.ToString();
+
+            }
+        }
+
+        private void loadBtn_Click(object sender, EventArgs e)
+        {
+            XmlDocument xmlDocument = new XmlDocument();
+            //CHANGE NAME OF XML FILE 
+            xmlDocument.Load(filePath);
+
+            //CHANGE CONNECTION STRING 
+            SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+            con.Open();
+
+
+            //MAKE SURE THE NODE IS "entry" OR CHANGE STRING BELOW
+            XmlNodeList nodes = xmlDocument.SelectNodes("//entry");
+            foreach (XmlNode node in nodes)
+            {
+                int instructor_id = int.Parse(node.SelectSingleNode("instructor_id").InnerText);
+                int course_id = int.Parse(node.SelectSingleNode("course_id").InnerText);
+                int date_id = int.Parse(node.SelectSingleNode("date_id").InnerText);
+                int num = int.Parse(node.SelectSingleNode("num_courses").InnerText);
+
+                string sql = "INSERT INTO factTable (instructor_id, course_id, date_id, num_courses) VALUES (@param1, @param2, @param3, @param4)";
+                SqlCommand command = new SqlCommand(sql, con);
+
+                command.Parameters.AddWithValue("@param1", instructor_id);
+                command.Parameters.AddWithValue("@param2", course_id);
+                command.Parameters.AddWithValue("@param3", date_id);
+                command.Parameters.AddWithValue("@param4", num);
+
+                command.ExecuteNonQuery();
+
+            }
+            con.Close();
+            MessageBox.Show("Entries have been added to the database.");
         }
     }
 }
