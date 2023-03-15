@@ -10,8 +10,8 @@ namespace datawarehouse_courses
     {
         string filePath = "";
 
-        //private SqlConnection conn = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
-        private SqlConnection conn = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
+        private SqlConnection conn = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+        //private SqlConnection conn = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
 
         public search()
         {
@@ -153,7 +153,7 @@ namespace datawarehouse_courses
 
                 query += " FROM courses_fact ";
 
-                bool joinInstructor = columns.Contains("instructor_dimension.name");
+                bool joinInstructor = columns.Contains("instructor_dimension.name") || columns.Contains("instructor_dimension.gender");
                 bool joinDate = columns.Contains("date_dimension.year") || columns.Contains("date_dimension.semester");
                 bool joinCourses = columns.Contains("courses_dimension.course_name") || columns.Contains("courses_dimension.course_department");
 
@@ -288,8 +288,8 @@ namespace datawarehouse_courses
             xmlDocument.Load(filePath);
 
             //CHANGE CONNECTION STRING 
-            //SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
-            SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+            //SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
             con.Open();
 
 
@@ -297,70 +297,77 @@ namespace datawarehouse_courses
             foreach (XmlNode node in dateNode)
             {
 
-
                 int year = int.Parse(node.SelectSingleNode("year").InnerText);
                 string semester = (node.SelectSingleNode("semester").InnerText);
 
-                string checkSql = "SELECT * from timeDate where year = '" + year +"' and semester = '" + semester + "'"; 
+                string checkSql = "SELECT COUNT(*) from date_dimension where year = '" + year +"' and semester = '" + semester + "'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+            
 
+                    string sql = "INSERT INTO date_dimension (year, semester) VALUES (@param1, @param2)";
+                    SqlCommand command = new SqlCommand(sql, con);
 
+                    command.Parameters.AddWithValue("@param1", year);
+                    command.Parameters.AddWithValue("@param2", semester);
 
-                string sql = "INSERT INTO timeDate (semester, year) VALUES (@param1, @param2)";
-                SqlCommand command = new SqlCommand(sql, con);
-
-                command.Parameters.AddWithValue("@param1", semester);
-                command.Parameters.AddWithValue("@param2", year);
-
-                command.ExecuteNonQuery();
-
+                    command.ExecuteNonQuery();
+                }
             }
-
 
             XmlNodeList instructorNode = xmlDocument.SelectNodes("//instructor");
             foreach (XmlNode node in instructorNode)
             {
-                string first_name = (node.SelectSingleNode("first_name").InnerText);
-                string last_name = (node.SelectSingleNode("last_name").InnerText);
-                string title = node.SelectSingleNode("title").InnerText;
-                string department = node.SelectSingleNode("dept_name").InnerText;
+               
+                string name = (node.SelectSingleNode("name").InnerText);
+                string department = node.SelectSingleNode("department").InnerText;
                 string gender = node.SelectSingleNode("gender").InnerText;
 
+                string checkSql = "SELECT COUNT(*) from instructor_dimension where name = '" + name +"' and department = '" + department + "' and gender = '"+ gender +"'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+           
 
-                string sql = "INSERT INTO instructors (first_name, last_name, title, dept_name, gender) VALUES (@param1, @param2, @param3, @param4, @param5)";
-                SqlCommand command = new SqlCommand(sql, con);
+                    string sql = "INSERT INTO instructor_dimension (name, department, gender) VALUES (@param1, @param2, @param3)";
+                    SqlCommand command = new SqlCommand(sql, con);
 
-                command.Parameters.AddWithValue("@param1", first_name);
-                command.Parameters.AddWithValue("@param2", last_name);
-                command.Parameters.AddWithValue("@param3", title);
-                command.Parameters.AddWithValue("@param4", department);
-                command.Parameters.AddWithValue("@param5", gender);
+                    command.Parameters.AddWithValue("@param1", name);
+                    command.Parameters.AddWithValue("@param2", department);
+                    command.Parameters.AddWithValue("@param3", gender);
 
-                command.ExecuteNonQuery();
-
-
-
+                    command.ExecuteNonQuery();
+                }
             }
 
 
             XmlNodeList courseNode = xmlDocument.SelectNodes("//course");
             foreach (XmlNode node in courseNode)
             {
-                string dept_name = node.SelectSingleNode("dept_name").InnerText;
-                string title = node.SelectSingleNode("title").InnerText;
-                int credit = int.Parse(node.SelectSingleNode("credit").InnerText);
+                string course_name = node.SelectSingleNode("course_name").InnerText;
+                string dept_name = node.SelectSingleNode("course_department").InnerText;
+                
+                string checkSql = "SELECT COUNT(*) from courses_dimension where course_name = '" + course_name +"' and course_department = '" + dept_name + "'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+                    string sql = "INSERT INTO courses_dimension (course_name, course_department) VALUES (@param1, @param2)";
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    command.Parameters.AddWithValue("@param1", course_name);
+                    command.Parameters.AddWithValue("@param2", dept_name);
 
 
-                string sql = "INSERT INTO courses (dept_name, title, credit) VALUES (@param1, @param2, @param3)";
-                SqlCommand command = new SqlCommand(sql, con);
 
-                command.Parameters.AddWithValue("@param1", dept_name);
-                command.Parameters.AddWithValue("@param2", title);
-                command.Parameters.AddWithValue("@param3", credit);
-
-
-
-                command.ExecuteNonQuery();
-
+                    command.ExecuteNonQuery();
+                }
 
             }
 
@@ -372,21 +379,37 @@ namespace datawarehouse_courses
                 int instructor_id = int.Parse(node.SelectSingleNode("instructor_id").InnerText);
                 int course_id = int.Parse(node.SelectSingleNode("course_id").InnerText);
                 int date_id = int.Parse(node.SelectSingleNode("date_id").InnerText);
-                int num = int.Parse(node.SelectSingleNode("num_courses").InnerText);
+                int num = int.Parse(node.SelectSingleNode("number_of_courses").InnerText);
 
-                string sql = "INSERT INTO factTable (instructor_id, course_id, date_id, num_courses) VALUES (@param1, @param2, @param3, @param4)";
-                SqlCommand command = new SqlCommand(sql, con);
+                string checkSql = "SELECT COUNT(*) from courses_fact where instructor_id = '" + instructor_id +"' and course_id = '" + course_id + "' and date_id = '" + date_id + "'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+            
+                    string sql = "INSERT INTO courses_fact (course_id, date_id,instructor_id,  number_of_courses) VALUES (@param1, @param2, @param3, @param4)";
+                    SqlCommand command = new SqlCommand(sql, con);
 
-                command.Parameters.AddWithValue("@param1", instructor_id);
-                command.Parameters.AddWithValue("@param2", course_id);
-                command.Parameters.AddWithValue("@param3", date_id);
-                command.Parameters.AddWithValue("@param4", num);
+                    command.Parameters.AddWithValue("@param1", course_id);
+                    command.Parameters.AddWithValue("@param2", date_id);
+                    command.Parameters.AddWithValue("@param3", instructor_id);
+                    command.Parameters.AddWithValue("@param4", num);
 
-                command.ExecuteNonQuery();
-
+                    command.ExecuteNonQuery();
+                }
             }
+            
             con.Close();
             MessageBox.Show("Entries have been added to the database.");
+            
+            PopulateComboBox(coursesComboBox, "SELECT DISTINCT course_name FROM courses_dimension ORDER BY course_name ASC");
+            PopulateComboBox(departmentComboBox, "SELECT DISTINCT course_department FROM courses_dimension ORDER BY course_department ASC");
+            //departmentComboBox.Items.Add("courses_dimension.course_name");
+            PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension ORDER BY name ASC");
+            PopulateComboBox(dateComboBox, "SELECT DISTINCT year FROM date_dimension ORDER BY year ASC");
+            PopulateComboBox(semsterComboBox, "SELECT DISTINCT semester FROM date_dimension ORDER BY semester ASC");
+            PopulateComboBox(genderComboBox, "SELECT DISTINCT gender FROM instructor_dimension ORDER BY gender ASC");
 
 
         }
