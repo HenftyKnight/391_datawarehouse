@@ -155,7 +155,7 @@ namespace datawarehouse_courses
 
                 query += " FROM courses_fact ";
 
-                bool joinInstructor = columns.Contains("instructor_dimension.name");
+                bool joinInstructor = columns.Contains("instructor_dimension.name") || columns.Contains("instructor_dimension.gender");
                 bool joinDate = columns.Contains("date_dimension.year") || columns.Contains("date_dimension.semester");
                 bool joinCourses = columns.Contains("courses_dimension.course_name") || columns.Contains("courses_dimension.course_department");
 
@@ -286,112 +286,137 @@ namespace datawarehouse_courses
 
         private void loadBtn_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=ANDROMEDA;Initial Catalog=DATAWAREHOUSE;Integrated Security=True";
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(filePath);
 
-            // Path to the XML file
-            string xmlFilePath = "C:\\Users\\My Computer\\source\\repos\\datawarehouse_courses\\xml.xml";
+            //CHANGE CONNECTION STRING 
+            SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+            //SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
+            con.Open();
 
             // Create a new DataSet and load the XML file into it
             DataSet xmlDataSet = new DataSet();
             xmlDataSet.ReadXml(xmlFilePath);
 
-            // Create a new SqlConnection object and open the connection
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-
-            // Create a new SqlDataAdapter and use it to fill a DataTable with the data from the dimension tables
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM date_dimension", connection);
-            DataTable dateDimensionTable = new DataTable();
-            adapter.Fill(dateDimensionTable);
-
-            adapter = new SqlDataAdapter("SELECT * FROM instructor_dimension", connection);
-            DataTable instructorDimensionTable = new DataTable();
-            adapter.Fill(instructorDimensionTable);
-
-            adapter = new SqlDataAdapter("SELECT * FROM courses_dimension", connection);
-            DataTable coursesDimensionTable = new DataTable();
-            adapter.Fill(coursesDimensionTable);
-
-            // Create a new DataTable to hold the new records from the XML file
-            DataTable newRecordsTable = xmlDataSet.Tables[0].Copy();
-
-            // Set the primary key for the dimension tables
-            DataColumn[] primaryKeyColumns = new DataColumn[3];
-            primaryKeyColumns[0] = dateDimensionTable.Columns["date_id"];
-            dateDimensionTable.PrimaryKey = primaryKeyColumns;
-
-            primaryKeyColumns[0] = instructorDimensionTable.Columns["instructor_id"];
-            instructorDimensionTable.PrimaryKey = primaryKeyColumns;
-
-            primaryKeyColumns[0] = coursesDimensionTable.Columns["course_id"];
-            coursesDimensionTable.PrimaryKey = primaryKeyColumns;
-
-
-            // Loop through the new records and compare them to the existing records in the dimension tables
-            foreach (DataRow newRecord in newRecordsTable.Rows)
+            XmlNodeList dateNode = xmlDocument.SelectNodes("//date");
+            foreach (XmlNode node in dateNode)
             {
-                DataRow existingRecord;
 
-                // Check if the date dimension record already exists, otherwise insert it
-                existingRecord = dateDimensionTable.Rows.Find(newRecord["date_id"]);
-                if (existingRecord == null)
-                {
-                    SqlCommand command = new SqlCommand("INSERT INTO date_dimension (date_id, year, semester) VALUES (@date_id, @year, @semester)", connection);
-                    command.Parameters.AddWithValue("@date_id", newRecord["date_id"]);
-                    command.Parameters.AddWithValue("@year", newRecord["year"]);
-                    command.Parameters.AddWithValue("@semester", newRecord["semester"]);
+                int year = int.Parse(node.SelectSingleNode("year").InnerText);
+                string semester = (node.SelectSingleNode("semester").InnerText);
+
+                string checkSql = "SELECT COUNT(*) from date_dimension where year = '" + year +"' and semester = '" + semester + "'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+            
+
+                    string sql = "INSERT INTO date_dimension (year, semester) VALUES (@param1, @param2)";
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    command.Parameters.AddWithValue("@param1", year);
+                    command.Parameters.AddWithValue("@param2", semester);
+
                     command.ExecuteNonQuery();
                 }
-
-                // Check if the instructor dimension record already exists, otherwise insert it
-                existingRecord = instructorDimensionTable.Rows.Find(newRecord["instructor_id"]);
-                if (existingRecord == null)
-                {
-                    SqlCommand command = new SqlCommand("INSERT INTO instructor_dimension (instructor_id, name, department, gender) VALUES (@instructor_id, @name, @department, @gender)", connection);
-                    command.Parameters.AddWithValue("@instructor_id", newRecord["instructor_id"]);
-                    command.Parameters.AddWithValue("@name", newRecord["instructor_name"]);
-                    command.Parameters.AddWithValue("@department", newRecord["instructor_department"]);
-                    command.Parameters.AddWithValue("@gender", newRecord["instructor_gender"]);
-                    command.ExecuteNonQuery();
-                }
-
-                // Check if the course dimension record already exists, otherwise insert it
-                existingRecord = coursesDimensionTable.Rows.Find(newRecord["course_id"]);
-                if (existingRecord == null)
-                {
-                    SqlCommand command = new SqlCommand("INSERT INTO courses_dimension (course_id, course_name, course_department) VALUES (@course_id, @course_name, @course_department)", connection);
-                    command.Parameters.AddWithValue("@course_id", newRecord["course_id"]);
-                    command.Parameters.AddWithValue("@course_name", newRecord["course_name"]);
-                    command.Parameters.AddWithValue("@course_department", newRecord["course_department"]);
-                    // Complete the SQL command with the missing parameters and execute it
-                    command.ExecuteNonQuery();
-                }
-
-                // Create a new SqlDataAdapter and use it to fill a DataTable with the data from the fact table
-                SqlDataAdapter factAdapter = new SqlDataAdapter("SELECT * FROM courses_fact", connection);
-                DataTable coursesFactTable = new DataTable();
-                factAdapter.Fill(coursesFactTable);
-
-
-                // Check if the record already exists in the courses_fact table, otherwise insert it
-                SqlCommand selectCommand = new SqlCommand("SELECT COUNT(*) FROM courses_fact WHERE date_id=@date_id AND instructor_id=@instructor_id AND course_id=@course_id", connection);
-                selectCommand.Parameters.AddWithValue("@date_id", newRecord["date_id"]);
-                selectCommand.Parameters.AddWithValue("@instructor_id", newRecord["instructor_id"]);
-                selectCommand.Parameters.AddWithValue("@course_id", newRecord["course_id"]);
-                int count = Convert.ToInt32(selectCommand.ExecuteScalar());
-
-                if (count == 0)
-                {
-                    SqlCommand insertCommand = new SqlCommand("INSERT INTO courses_fact (date_id, instructor_id, course_id, students_enrolled, students_passed) VALUES (@date_id, @instructor_id, @course_id, @students_enrolled, @students_passed)", connection);
-                    insertCommand.Parameters.AddWithValue("@date_id", newRecord["date_id"]);
-                    insertCommand.Parameters.AddWithValue("@instructor_id", newRecord["instructor_id"]);
-                    insertCommand.Parameters.AddWithValue("@course_id", newRecord["course_id"]);
-                    insertCommand.Parameters.AddWithValue("@number_of_courses", newRecord["num_courses"]);
-                    insertCommand.ExecuteNonQuery();
-                }
-
-                conn.Close();
             }
+
+            XmlNodeList instructorNode = xmlDocument.SelectNodes("//instructor");
+            foreach (XmlNode node in instructorNode)
+            {
+               
+                string name = (node.SelectSingleNode("name").InnerText);
+                string department = node.SelectSingleNode("department").InnerText;
+                string gender = node.SelectSingleNode("gender").InnerText;
+
+                string checkSql = "SELECT COUNT(*) from instructor_dimension where name = '" + name +"' and department = '" + department + "' and gender = '"+ gender +"'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+           
+
+                    string sql = "INSERT INTO instructor_dimension (name, department, gender) VALUES (@param1, @param2, @param3)";
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    command.Parameters.AddWithValue("@param1", name);
+                    command.Parameters.AddWithValue("@param2", department);
+                    command.Parameters.AddWithValue("@param3", gender);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+
+
+            XmlNodeList courseNode = xmlDocument.SelectNodes("//course");
+            foreach (XmlNode node in courseNode)
+            {
+                string course_name = node.SelectSingleNode("course_name").InnerText;
+                string dept_name = node.SelectSingleNode("course_department").InnerText;
+                
+                string checkSql = "SELECT COUNT(*) from courses_dimension where course_name = '" + course_name +"' and course_department = '" + dept_name + "'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+                    string sql = "INSERT INTO courses_dimension (course_name, course_department) VALUES (@param1, @param2)";
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    command.Parameters.AddWithValue("@param1", course_name);
+                    command.Parameters.AddWithValue("@param2", dept_name);
+
+
+
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+
+            //MAKE SURE THE NODE IS "entry" OR CHANGE STRING BELOW
+            XmlNodeList nodes = xmlDocument.SelectNodes("//entry");
+            foreach (XmlNode node in nodes)
+            {
+                int instructor_id = int.Parse(node.SelectSingleNode("instructor_id").InnerText);
+                int course_id = int.Parse(node.SelectSingleNode("course_id").InnerText);
+                int date_id = int.Parse(node.SelectSingleNode("date_id").InnerText);
+                int num = int.Parse(node.SelectSingleNode("number_of_courses").InnerText);
+
+                string checkSql = "SELECT COUNT(*) from courses_fact where instructor_id = '" + instructor_id +"' and course_id = '" + course_id + "' and date_id = '" + date_id + "'"; 
+                
+                SqlCommand check_command = new SqlCommand(checkSql, con);
+                int count = (int) check_command.ExecuteScalar();
+                if (count == 0) 
+                { 
+            
+                    string sql = "INSERT INTO courses_fact (course_id, date_id,instructor_id,  number_of_courses) VALUES (@param1, @param2, @param3, @param4)";
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    command.Parameters.AddWithValue("@param1", course_id);
+                    command.Parameters.AddWithValue("@param2", date_id);
+                    command.Parameters.AddWithValue("@param3", instructor_id);
+                    command.Parameters.AddWithValue("@param4", num);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            
+            con.Close();
+            MessageBox.Show("Entries have been added to the database.");
+            
+            PopulateComboBox(coursesComboBox, "SELECT DISTINCT course_name FROM courses_dimension ORDER BY course_name ASC");
+            PopulateComboBox(departmentComboBox, "SELECT DISTINCT course_department FROM courses_dimension ORDER BY course_department ASC");
+            //departmentComboBox.Items.Add("courses_dimension.course_name");
+            PopulateComboBox(instructorComboBox, "SELECT DISTINCT name FROM instructor_dimension ORDER BY name ASC");
+            PopulateComboBox(dateComboBox, "SELECT DISTINCT year FROM date_dimension ORDER BY year ASC");
+            PopulateComboBox(semsterComboBox, "SELECT DISTINCT semester FROM date_dimension ORDER BY semester ASC");
+            PopulateComboBox(genderComboBox, "SELECT DISTINCT gender FROM instructor_dimension ORDER BY gender ASC");
+
+
         }
     }
 }

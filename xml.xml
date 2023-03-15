@@ -1,14 +1,28 @@
-<course>
+<?xml version="1.0" encoding="utf-8"?>
+<entries>
+	<date>
+		<year>2029</year>
+		<semester>Spring</semester>
+	</date>
+	<instructor>
+		<name>Cherry Brookman</name>
+		<department>P</department>
+		<gender>female</gender>
+	</instructor>
+	<course>
 	<entry>
 		<instructor_id>3</instructor_id>
 		<course_id>3</course_id>
 		<date_id>2</date_id>
 		<num_courses>6</num_courses>
 	</entry>
+		<course_department>PHYSICS</course_department>
+		<course_name>Nuclear Reactor</course_name>
+	</course>
 	<entry>
-		<instructor_id>2</instructor_id>
-		<course_id>2</course_id>
-		<date_id>2</date_id>
-		<num_courses>2</num_courses>
+		<instructor_id>1</instructor_id>
+		<course_id>1</course_id>
+		<date_id>1</date_id>
+		<number_of_courses>1</number_of_courses>
 	</entry>
-</course>
+</entries>
