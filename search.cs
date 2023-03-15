@@ -288,16 +288,21 @@ namespace datawarehouse_courses
             xmlDocument.Load(filePath);
 
             //CHANGE CONNECTION STRING 
-            SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
-            //SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
+            //SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
             con.Open();
 
 
             XmlNodeList dateNode = xmlDocument.SelectNodes("//date");
             foreach (XmlNode node in dateNode)
             {
+
+
                 int year = int.Parse(node.SelectSingleNode("year").InnerText);
                 string semester = (node.SelectSingleNode("semester").InnerText);
+
+                string checkSql = "SELECT * from timeDate where year = '" + year +"' and semester = '" + semester + "'"; 
+
 
 
                 string sql = "INSERT INTO timeDate (semester, year) VALUES (@param1, @param2)";
