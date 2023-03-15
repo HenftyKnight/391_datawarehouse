@@ -15,6 +15,7 @@ CREATE TABLE instructor_dimension(
 	instructor_id INT PRIMARY KEY,
 	name	VARCHAR(20),
 	department VARCHAR(20),
+	gender VARCHAR(8),
 );
 
 CREATE TABLE courses_dimension(

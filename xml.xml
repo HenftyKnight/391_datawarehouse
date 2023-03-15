@@ -1,0 +1,14 @@
+<course>
+	<entry>
+		<instructor_id>3</instructor_id>
+		<course_id>3</course_id>
+		<date_id>2</date_id>
+		<num_courses>6</num_courses>
+	</entry>
+	<entry>
+		<instructor_id>2</instructor_id>
+		<course_id>2</course_id>
+		<date_id>2</date_id>
+		<num_courses>2</num_courses>
+	</entry>
+</course>
