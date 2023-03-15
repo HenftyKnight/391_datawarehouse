@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entries>
+	<!-- Spring -->
+	<date>
+		<year> 2022 </year>
+		<semester> Summer </semester>
+	</date>
+	<!-- CHEMISTRY -->
+	<entry>
+		<course_id>
+			3
+		</course_id>
+		<date_id>
+			3
+		</date_id>
+		<instructor_id>
+			2
+		</instructor_id>
+		<number_of_courses>
+			1
+		</number_of_courses>
+	</entry>
+	<entry>
+		<course_id>
+			14
+		</course_id>
+		<date_id>
+			3
+		</date_id>
+		<instructor_id>
+			3
+		</instructor_id>
+		<number_of_courses>
+			1
+		</number_of_courses>
+	</entry>
+
+	<!-- PHYSICS -->
+	<entry>
+		<course_id>
+			4
+		</course_id>
+		<date_id>
+			3
+		</date_id>
+		<instructor_id>
+			4
+		</instructor_id>
+		<number_of_courses>
+			1
+		</number_of_courses>
+	</entry>
+
+	<!-- MATHEMATICS -->
+	<entry>
+		<course_id>
+			8
+		</course_id>
+		<date_id>
+			3
+		</date_id>
+		<instructor_id>
+			8
+		</instructor_id>
+		<number_of_courses>
+			1
+		</number_of_courses>
+	</entry>
+	<entry>
+		<course_id>
+			11
+		</course_id>
+		<date_id>
+			3
+		</date_id>
+		<instructor_id>
+			8
+		</instructor_id>
+		<number_of_courses>
+			1
+		</number_of_courses>
+	</entry>
+
+	<!-- COMPUTER SCIENCE -->
+	<entry>
+		<course_id>
+			7
+		</course_id>
+		<date_id>
+			3
+		</date_id>
+		<instructor_id>
+			11
+		</instructor_id>
+		<number_of_courses>
+			1
+		</number_of_courses>
+	</entry>
+	
+</entries>

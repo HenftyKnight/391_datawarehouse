@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entries>
+
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 200</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 300</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 100</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 400</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 300</course_name>
+	</course>
+	<course>
+		<course_department>BIOLOGY</course_department>
+		<course_name>BIOL 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 200</course_name>
+	</course>
+	<course>
+		<course_department>PSYCHOLOGY</course_department>
+		<course_name>PSYC 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 200</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 200</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>MATHEMATICS</course_department>
+		<course_name>MATH 200</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 100</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 100</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 300</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 400</course_name>
+	</course>
+	<course>
+		<course_department>COMPUTER SCIENCE</course_department>
+		<course_name>COMP 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 200</course_name>
+	</course>
+	<course>
+		<course_department>HISTORY</course_department>
+		<course_name>HIST 400</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>CHEMISTRY</course_department>
+		<course_name>CHEM 300</course_name>
+	</course>
+	<course>
+		<course_department>PHYSICS</course_department>
+		<course_name>PHYS 400</course_name>
+	</course>
+	<course>
+		<course_department>ENGLISH</course_department>
+		<course_name>ENGL 100</course_name>
+	</course>
+	<course>
+		<course_department>ECONOMICS</course_department>
+		<course_name>ECON 400</course_name>
+	</course>
+</entries>

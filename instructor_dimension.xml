@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entries>
+	<instructor>
+		<name> Charlie Anderson </name>
+		<department>HISTORY</department>
+		<gender>Female</gender>
+	</instructor>
+	
+	<instructor>
+		<name> Jane Johnson </name>
+		<department>CHEMISTRY</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Alice Davis </name>
+		<department>ECONOMICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Alice Thomas </name>
+		<department>ENGLISH</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Grace Lee </name>
+		<department>PHYSICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> David Anderson </name>
+		<department>PHYSICS</department>
+		<gender>Male</gender>
+	</instructor>
+	
+	<instructor>
+		<name> Frank Smith </name>
+		<department>PHYSICS</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> Charlie Wilson </name>
+		<department>PSYCHOLOGY</department>
+		<gender>Male</gender>
+	</instructor>
+	
+	<instructor>
+		<name> Bob Thomas </name>
+		<department>ECONOMICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Jane Doe </name>
+		<department>ENGLISH</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Jane Smith </name>
+		<department>PHYSICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Alice Smith </name>
+		<department>ECONOMICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Charlie Thomas </name>
+		<department>ENGLISH</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> John Garcia </name>
+		<department>HISTORY</department>
+		<gender>Female</gender>
+	</instructor>
+	
+	<instructor>
+		<name> David Thomas </name>
+		<department>ENGLISH</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Emily Johnson </name>
+		<department>CHEMISTRY</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> Frank Johnson </name>
+		<department>PHYSICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Henry Lee </name>
+		<department>PHYSICS</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> Henry Smith </name>
+		<department>BIOLOGY</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> John Smith </name>
+		<department>PSYCHOLOGY</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> Alice Wilson </name>
+		<department>MATHEMATICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> John Gonzalez </name>
+		<department>CHEMISTRY</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> John Johnson </name>
+		<department>PSYCHOLOGY</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> David Lee </name>
+		<department>PSYCHOLOGY</department>
+		<gender>Male</gender>
+	</instructor>
+
+	<instructor>
+		<name> David Johnson </name>
+		<department>ENGLISH</department>
+		<gender>Male</gender>
+	</instructor>
+	<instructor>
+		<name> Charlie Johnson </name>
+		<department>CHEMISTRY</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> David Gonzalez </name>
+		<department>PHYSICS</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> David Davis </name>
+		<department>PSYCHOLOGY</department>
+		<gender>Female</gender>
+	</instructor>
+	<instructor>
+		<name> Bob Davis </name>
+		<department>PHYSICS</department>
+		<gender>Male</gender>
+	</instructor>
+</entries>

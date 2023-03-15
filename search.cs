@@ -13,8 +13,7 @@ namespace datawarehouse_courses
         string filePath = "";
 
         private SqlConnection conn = new SqlConnection("Data Source=ANDROMEDA;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
-        //private SqlConnection conn = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
-
+     
         public search()
         {
             InitializeComponent();
@@ -280,7 +279,6 @@ namespace datawarehouse_courses
             {
                 filePath = fopen.FileName;
                 textBox1.Text = filePath.ToString();
-
             }
         }
 
@@ -290,13 +288,8 @@ namespace datawarehouse_courses
             xmlDocument.Load(filePath);
 
             //CHANGE CONNECTION STRING 
-            SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
-            //SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=ANDROMEDA;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
             con.Open();
-
-            // Create a new DataSet and load the XML file into it
-            DataSet xmlDataSet = new DataSet();
-            xmlDataSet.ReadXml(xmlFilePath);
 
             XmlNodeList dateNode = xmlDocument.SelectNodes("//date");
             foreach (XmlNode node in dateNode)
@@ -310,9 +303,7 @@ namespace datawarehouse_courses
                 SqlCommand check_command = new SqlCommand(checkSql, con);
                 int count = (int) check_command.ExecuteScalar();
                 if (count == 0) 
-                { 
-            
-
+                {             
                     string sql = "INSERT INTO date_dimension (year, semester) VALUES (@param1, @param2)";
                     SqlCommand command = new SqlCommand(sql, con);
 
@@ -337,7 +328,6 @@ namespace datawarehouse_courses
                 int count = (int) check_command.ExecuteScalar();
                 if (count == 0) 
                 { 
-           
 
                     string sql = "INSERT INTO instructor_dimension (name, department, gender) VALUES (@param1, @param2, @param3)";
                     SqlCommand command = new SqlCommand(sql, con);
@@ -368,8 +358,6 @@ namespace datawarehouse_courses
 
                     command.Parameters.AddWithValue("@param1", course_name);
                     command.Parameters.AddWithValue("@param2", dept_name);
-
-
 
                     command.ExecuteNonQuery();
                 }
@@ -416,6 +404,10 @@ namespace datawarehouse_courses
             PopulateComboBox(semsterComboBox, "SELECT DISTINCT semester FROM date_dimension ORDER BY semester ASC");
             PopulateComboBox(genderComboBox, "SELECT DISTINCT gender FROM instructor_dimension ORDER BY gender ASC");
 
+        }
+
+        private void search_Load_2(object sender, EventArgs e)
+        {
 
         }
     }
