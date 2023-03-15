@@ -285,12 +285,79 @@ namespace datawarehouse_courses
         private void loadBtn_Click(object sender, EventArgs e)
         {
             XmlDocument xmlDocument = new XmlDocument();
-            //CHANGE NAME OF XML FILE 
             xmlDocument.Load(filePath);
 
             //CHANGE CONNECTION STRING 
             SqlConnection con = new SqlConnection("Data Source=SYNAPSE;Initial Catalog=DATAWAREHOUSE;Integrated Security=True");
+            //SqlConnection con = new SqlConnection("Data Source=WAKA;Initial Catalog=WAREHOUSE;Integrated Security=True");
             con.Open();
+
+
+            XmlNodeList dateNode = xmlDocument.SelectNodes("//date");
+            foreach (XmlNode node in dateNode)
+            {
+                int year = int.Parse(node.SelectSingleNode("year").InnerText);
+                string semester = (node.SelectSingleNode("semester").InnerText);
+
+
+                string sql = "INSERT INTO timeDate (semester, year) VALUES (@param1, @param2)";
+                SqlCommand command = new SqlCommand(sql, con);
+
+                command.Parameters.AddWithValue("@param1", semester);
+                command.Parameters.AddWithValue("@param2", year);
+
+                command.ExecuteNonQuery();
+
+            }
+
+
+            XmlNodeList instructorNode = xmlDocument.SelectNodes("//instructor");
+            foreach (XmlNode node in instructorNode)
+            {
+                string first_name = (node.SelectSingleNode("first_name").InnerText);
+                string last_name = (node.SelectSingleNode("last_name").InnerText);
+                string title = node.SelectSingleNode("title").InnerText;
+                string department = node.SelectSingleNode("dept_name").InnerText;
+                string gender = node.SelectSingleNode("gender").InnerText;
+
+
+                string sql = "INSERT INTO instructors (first_name, last_name, title, dept_name, gender) VALUES (@param1, @param2, @param3, @param4, @param5)";
+                SqlCommand command = new SqlCommand(sql, con);
+
+                command.Parameters.AddWithValue("@param1", first_name);
+                command.Parameters.AddWithValue("@param2", last_name);
+                command.Parameters.AddWithValue("@param3", title);
+                command.Parameters.AddWithValue("@param4", department);
+                command.Parameters.AddWithValue("@param5", gender);
+
+                command.ExecuteNonQuery();
+
+
+
+            }
+
+
+            XmlNodeList courseNode = xmlDocument.SelectNodes("//course");
+            foreach (XmlNode node in courseNode)
+            {
+                string dept_name = node.SelectSingleNode("dept_name").InnerText;
+                string title = node.SelectSingleNode("title").InnerText;
+                int credit = int.Parse(node.SelectSingleNode("credit").InnerText);
+
+
+                string sql = "INSERT INTO courses (dept_name, title, credit) VALUES (@param1, @param2, @param3)";
+                SqlCommand command = new SqlCommand(sql, con);
+
+                command.Parameters.AddWithValue("@param1", dept_name);
+                command.Parameters.AddWithValue("@param2", title);
+                command.Parameters.AddWithValue("@param3", credit);
+
+
+
+                command.ExecuteNonQuery();
+
+
+            }
 
 
             //MAKE SURE THE NODE IS "entry" OR CHANGE STRING BELOW
@@ -315,6 +382,8 @@ namespace datawarehouse_courses
             }
             con.Close();
             MessageBox.Show("Entries have been added to the database.");
+
+
         }
     }
 }
